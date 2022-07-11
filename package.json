@@ -1,0 +1,30 @@
+{
+  "name": "ticketingsystem",
+  "version": "1.0.0",
+  "description": "MERN stack ticketing system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylerlov/ticketingsystem.git"
+  },
+  "author": "Tyler Lovell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylerlov/ticketingsystem/issues"
+  },
+  "homepage": "https://github.com/tylerlov/ticketingsystem#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
