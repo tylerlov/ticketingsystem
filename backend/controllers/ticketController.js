@@ -138,5 +138,5 @@ module.exports = {
     getTicket,
     createTicket,
     deleteTicket,
-    updateTicket
+    updateTicket,
 }
