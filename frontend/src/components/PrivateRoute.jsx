@@ -1,17 +1,22 @@
-import React from 'react'
-import { Navigate, Outlet } from 'react-router-dom'
-import { useAuthStatus } from '../hooks/useAuthStatus'
-import Spinner from './Spinner'
 
-const PrivateRoute = () => {
+import { Navigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-    const {loggedIn , checkingStatus } = useAuthStatus()
+// NOTE: no need for useAuthStatus as it's a duplicate of Redux state and only
+// used here in the PrivateRoute
+// No need for an outlet as we are not using nested routing
 
-    if (checkingStatus) {
-        return <Spinner />
-    }
+// NOTE: We can remove use of the Spinner here as it will never show. We either
+// have a user in local storage that we trust is genuine or we dont'.
+// No request is made to the back end to authenticate the user so we don't
+// needthe Spinner
 
-  return loggedIn ? <Outlet /> : <Navigate to="/login" />
+const PrivateRoute = ({ children }) => {
+  const { user } = useSelector((state) => state.auth)
+
+  if (user) return children
+
+  return <Navigate to='/login' />
 }
 
 export default PrivateRoute

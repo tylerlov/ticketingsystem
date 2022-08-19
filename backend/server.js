@@ -3,7 +3,7 @@ const dotenv = require('dotenv').config();
 const {errorHandler} = require('./middleware/errorMiddleware');
 const colors = require('colors');
 const connectDB = require('./config/db');
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 5000
 
 //Connect to database
 connectDB()
@@ -25,6 +25,6 @@ app.use(errorHandler)
 
 
 app.get('/', (req, res) => {
-    res.status(201).send('Hello World');
+    res.status(200).send('Welcome to the ticketing desk API');
 })
 

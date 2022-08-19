@@ -19,9 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/newticket" element={<PrivateRoute />} >
-          <Route path='/newticket' element={<NewTicket />} />
-        </Route>
+        <Route path='/newticket' element={ <PrivateRoute> <NewTicket /> </PrivateRoute> } />
       </Routes>
       </div>
     </Router>

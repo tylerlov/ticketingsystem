@@ -4,7 +4,8 @@ const { getTicket, getTickets, createTicket, deleteTicket, updateTicket } = requ
 
 const {protect} = require("../middleware/authMiddleware");
 
-router.route('/').get(protect, getTickets).post(protect, createTicket)
+router.route('/').get(protect, getTickets)
+                .post(protect, createTicket)
 
 //need id in url for an individual ticket
 router.route('/:id')
