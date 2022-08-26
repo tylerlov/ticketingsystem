@@ -1,29 +1,29 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const userSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "name is required"],
+      required: [true, 'Please add a name'],
     },
     email: {
       type: String,
-      required: true,
-      unique: [true, "email is required"],
+      required: [true, 'Please add an email'],
+      unique: true,
     },
     password: {
       type: String,
-      required: [true, "password is required"],
+      required: [true, 'Please add a password'],
     },
     isAdmin: {
       type: Boolean,
+      required: true,
       default: false,
-      required: false,
     },
   },
   {
     timestamps: true,
-  } // {timestamps: true} is a mongoose option that adds createdAt and updatedAt fields to the schema
-);
+  }
+)
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema)
