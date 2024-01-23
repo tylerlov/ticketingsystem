@@ -25,10 +25,25 @@ const login = async (userData) => {
 // Logout user
 const logout = () => localStorage.removeItem('user')
 
+// Forgot Password
+const forgotPassword = async (email) => {
+  console.log('forgotPassword function called with email:', email);
+  const response = await axios.post(API_URL + 'forgot-password', { email })
+  return response.data
+}
+
+// Reset Password
+const resetPassword = async (data) => {
+  const response = await axios.put(API_URL + 'reset-password/' + data.token, { password: data.password })
+  return response.data
+}
+
 const authService = {
   register,
   logout,
   login,
+  forgotPassword,
+  resetPassword,
 }
 
 export default authService

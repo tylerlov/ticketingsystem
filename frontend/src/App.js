@@ -9,6 +9,8 @@ import Register from './pages/Register'
 import NewTicket from './pages/NewTicket'
 import Tickets from './pages/Tickets'
 import Ticket from './pages/Ticket'
+import ForgotPassword from './pages/ForgotPassword'
+import ResetPassword from './pages/ResetPassword'
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
             <Route path='/ticket/:ticketId' element={<PrivateRoute />}>
               <Route path='/ticket/:ticketId' element={<Ticket />} />
             </Route>
+            <Route path='/forgot-password' element={<ForgotPassword />} />
+            <Route path='/reset-password/:token' element={<ResetPassword />} />
           </Routes>
         </div>
       </Router>
