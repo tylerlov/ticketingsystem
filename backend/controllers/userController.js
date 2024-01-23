@@ -5,8 +5,8 @@ const crypto = require('crypto')
 const Mailjet = require('node-mailjet')
 
 const mailjet = new Mailjet({
-  apiKey: process.env.MJ_APIKEY_PUBLIC || '969d6b9b6d05d784e36f0b9a860e2192',
-  apiSecret: process.env.MJ_APIKEY_PRIVATE || '03777565c5624c11b4e68ec14e7a6bde'
+  apiKey: process.env.MJ_APIKEY_PUBLIC,
+  apiSecret: process.env.MJ_APIKEY_PRIVATE,
 });
 
 const User = require('../models/userModel')
